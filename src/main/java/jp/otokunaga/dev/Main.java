@@ -33,12 +33,9 @@ public class Main {
 		props = new Properties();
 		try(InputStream resourceStream = loader.getResourceAsStream(resourceName)) {
 		    props.load(resourceStream);
-
 		}catch(IOException e){
 			System.out.println("file not found. File name is "+ resourceName);
 		}
-		System.out.println(props.getProperty("API_KEY"));
-		System.out.println(props.getProperty("ASSISTANT_ID"));
 
 
 	}
@@ -71,7 +68,6 @@ public class Main {
 				MessageResponse messageResponse = service.message(messageOptions).execute();
 
 				System.out.println(messageResponse);
-				MessageResponse messageResponse2 = service.message(messageOptions).execute();
 	}
 
 }
